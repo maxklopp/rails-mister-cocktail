@@ -1,5 +1,11 @@
-<h1><%= @cocktail.name %></h1>
-<h2>Ingredients</h2>
+<body style="background: url(http://www.joesateast.com/sites/default/files/cocktails-at-joes-at-east.jpg);
+  background-attachment: fixed;
+  background-size:cover;
+  margin: 0;">
+
+<div id="container">
+<h2><%= @cocktail.name %></h2>
+<h3>Ingredients</h3>
 <h3><% doses = @cocktail.doses %></h3>
 <ul>
   <% doses.each do |dose| %>
@@ -9,7 +15,16 @@
 </li>
 <% end %>
 </ul>
+    <br>
+<%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail), class: "btn-form" %> <br><br>
+<%= link_to 'Delete this cocktail', cocktail_path(@cocktail), {method: :delete, class: "btn-form" } %> <br><br>
+<%= link_to 'Back to all cocktails', cocktails_path, class: "btn-form" %>
+</div>
+</body>
+</html>
 
-<%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %> <br>
-<%= link_to 'Back to all cocktails', cocktails_path %>
+
+
+
+
 

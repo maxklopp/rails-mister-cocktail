@@ -8,17 +8,14 @@
   <br>
     <%= form_for [@cocktail] do |f| %>
     <%= f.text_field :name %><br>
-    <%= f.submit "submit", class: "btn-form" %>
+    <%= f.button "submit", class: "btn-form" %>
     <% end %>
+    <br>
+    <%= link_to "delete", cocktails_path, class: "btn-form" %>
+    <br>
     <%= link_to "back", cocktails_path, class: "btn-form" %>
     </div>
     <script src="js/index.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-

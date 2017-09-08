@@ -1,9 +1,24 @@
-<h1>Add an ingredient</h1>
-<%= form_for [@cocktail, @dose] do |f| %>
-<%= f.label :dose %>
-<%= f.text_field :description %>
-<br>
-<%= f.label :ingredient %>
-<%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %> <br>
-<%= f.submit "add ingredient"%>
-<% end %>
+<body style="background: url(http://www.joesateast.com/sites/default/files/cocktails-at-joes-at-east.jpg);
+  background-attachment: fixed;
+  background-size:cover;
+  margin: 0;">
+
+  <div id="container">
+  <h2><%= @cocktail.name %></h2>
+  <br>
+    <%= form_for [@cocktail, @dose] do |f| %>
+    <%= f.label :dose %>
+    <%= f.text_field :description %>
+    <br>
+  <%= f.label :ingredient %>
+  <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %> <br>
+
+    <%= f.button "submit", class: "btn-form" %>
+    <% end %>
+    <br>
+    <%= link_to "back", cocktails_path, class: "btn-form" %>
+    </div>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
