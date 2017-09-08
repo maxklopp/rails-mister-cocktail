@@ -1,13 +1,24 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.error_notification %>
+<body style="background: url(http://www.joesateast.com/sites/default/files/cocktails-at-joes-at-east.jpg);
+  background-attachment: fixed;
+  background-size:cover;
+  margin: 0;">
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :ingredient %>
-    <%= f.input :dose %>
-  </div>
+  <div id="container">
+  <h2>Add a cocktail</h2>
+  <br>
+    <%= form_for [@cocktail] do |f| %>
+    <%= f.text_field :name %><br>
+    <%= f.submit "submit", class: "btn-form" %>
+    <% end %>
+    <%= link_to "back", cocktails_path, class: "btn-form" %>
+    </div>
+    <script src="js/index.js"></script>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</body>
+</html>
+
+
+
+
+
+
